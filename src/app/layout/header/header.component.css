@@ -1,0 +1,26 @@
+.navbar-fs{
+  display: flex;
+  height: 55px;
+  flex-flow: row wrap;
+  background-color: #251f1f;
+  color: white;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+}
+.navbar-fs .nav-link-fs{
+  flex-basis: 100px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 55px;
+}
+.navbar-fs .nav-link-fs:hover {
+  background-color: dimgray;
+  transform: scale(1.1, 1.1);
+}
+.home{
+  width: 250px;
+  font-size: 2em;
+  text-align: center;
+}
+
