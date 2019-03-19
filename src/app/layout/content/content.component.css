@@ -18,19 +18,28 @@
   top: 0;
   width: 100%;
   height: 400px;
-  background-color: rgba(0,0,0,0.5);
-  opacity: 0;
-  transition: visibility 200ms 200ms, opacity 200ms ease-in-out;
+  background-color: rgba(0,0,0,0.7);
+  opacity: 0.5;
+  transition: opacity 200ms ease-in-out;
 }
 .blog-header:hover  .blog-header-overlay{
-  visibility: visible;
   opacity: 1;
 }
 .blog-header  .overlay-text{
-  line-height: 400px;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
   font-size: 3em;
-  text-align: center;
+  opacity: 0;
+  transition: all 1s ease-in-out 1s;
+  text-shadow: 0 1px 0 black;
 }
+.blog-header  .overlay-text.float-left{
+  transform: translate(-10%);
+  opacity: 1;
+}
+
+
 .blog-header  .overlay-text::first-letter{
   font-size: 4rem;
 }
@@ -43,8 +52,7 @@
   overflow: hidden;
   cursor: pointer;
 }
-.blog-post>.blog-post-img{
-}
+
 .blog-post:hover>.blog-post-img{
   transform: scale(1.1,1.1);
 }
@@ -54,9 +62,9 @@
   top: 0;
   height: 300px;
   width: 100%;
-  background-color: rgba(0,0,0,0.5);
-  opacity: 0;
-  transition: visibility 200ms 200ms, opacity 200ms ease-in-out;
+  background-color: rgba(0,0,0,0.7);
+  opacity: 0.5;
+  transition: opacity 200ms ease-in-out;
 }
 .blog-post:hover  .blog-post-overlay{
   opacity: 1;
@@ -66,8 +74,60 @@
   font-size: 3em;
   text-align: center;
 }
-.blog-post  .overlay-text::first-letter{
+.blog-post  .blog-heading::first-letter{
   font-size: 4rem;
 }
+
+
+
+.blog-details{
+  margin-left: 15px;
+  position: absolute;
+  top: 200px;
+}
+
+.blog-post .blog-heading{
+  bottom: 0;
+  font-size: 3em;
+}
+
+.blog-date{
+  font-size: 1.2rem;
+}
+.blog-subheading{
+  font-size: 2rem;
+}
+
+.blog-post:hover .float-up{
+  transform: translateY(-100px);
+}
+
+.pre-loader{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,1);
+  left: 0;
+  top: 0;
+  z-index: 9;
+}
+
+@keyframes spin{
+  100% {transform: rotate(360deg)}
+}
+
+.loader-spinner{
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  height: 100px;
+  width: 100px;
+  border: 5px solid dimgray;
+  border-top: black;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
 
 

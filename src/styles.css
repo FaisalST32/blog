@@ -14,3 +14,22 @@ body{
 .transition{
   transition: all 200ms ease-in-out;
 }
+.transition-slow{
+  transition: all 500ms ease-in-out;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: dimgray;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
