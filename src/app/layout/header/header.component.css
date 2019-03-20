@@ -8,11 +8,22 @@
   align-items: center;
   justify-items: center;
 }
+.navbar-fs .nav-link-fs a{
+  color: white;
+  height: 55px;
+  text-decoration: none;
+  display: inline-block;
+}
 .navbar-fs .nav-link-fs{
   flex-basis: 100px;
   cursor: pointer;
   text-align: center;
   line-height: 55px;
+}
+
+.navbar-fs .nav-link-fs.write-new{
+  margin-left: auto;
+  margin-right: 20px;
 }
 .navbar-fs .nav-link-fs:hover {
   background-color: dimgray;

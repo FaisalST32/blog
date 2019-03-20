@@ -10,6 +10,7 @@ body{
   padding: 0;
   background-color: #353232;
   color: rgba(255, 255, 255, 0.8);
+  min-height: 100%;
 }
 .transition{
   transition: all 200ms ease-in-out;

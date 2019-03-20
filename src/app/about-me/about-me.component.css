@@ -1,0 +1,74 @@
+
+.well-fs {
+  display: inline-block;
+  padding: 20px;
+  background-color: #251f1f;
+  border-radius: 2px;
+  box-sizing: border-box;
+
+}
+
+.well:hover.hoverwell {
+  background-color: #1b1616;
+  cursor: pointer;
+}
+.well-fs .avi{
+  display: inline-block;
+
+}
+
+.about-well{
+  width: 100%;
+  margin: 20px 0;
+}
+.avi img{
+  height: 400px;
+}
+
+@media screen and (max-width: 993px){
+  .avi img{
+      width: 100%;
+      height: auto;
+  }
+}
+.about-text-div{
+  display: inline-block;
+  margin-left: 40px;
+  vertical-align: top;
+}
+@media screen and (max-width: 1200px){
+  .about-text-div{
+      margin-left: 0px;
+
+  }
+}
+.social-links img {
+  height: 30px;
+  vertical-align: middle;
+}
+
+.about-text-div .social-links:hover img{
+  transform: scale(1.1, 1.1)
+}
+.about-text-div ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-text-div ul li{
+  margin: 16px 0;
+}
+
+.about-text-div .username{
+  visibility: hidden;
+  opacity: 0;
+}
+.about-text-div .social-links:hover .username{
+  visibility: visible;
+  opacity: 1;
+}
+
+li a{
+  text-decoration: none;
+  color: inherit;
+}
