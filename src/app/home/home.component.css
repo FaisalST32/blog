@@ -148,22 +148,6 @@
   font-style: italic;
 }
 
-/* @keyframes spin{
-  100% {transform: rotate(360deg)}
-}
-
-.loader-spinner{
-  position: absolute;
-  top: calc(50% - 50px);
-  left: calc(50% - 50px);
-  height: 100px;
-  width: 100px;
-  border: 5px solid dimgray;
-  border-top: black;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-} */
-
 span.underline-transition{
   background-image: linear-gradient(transparent 97%, white 3%);
   background-repeat: no-repeat;

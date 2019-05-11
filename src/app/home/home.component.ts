@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+
   public imagesCount = 6;
   public hideLoader = false;
   public imagesLoadedCount = 0;
@@ -54,12 +55,18 @@ export class HomeComponent {
     }
   ];
   public imageLoaded() {
-    console.log('imageLoaded');
-    this.imagesLoadedCount = this.imagesLoadedCount + 1;
-    if (this.imagesLoadedCount === this.imagesCount) {
-      this.hideLoader = true;
-    }
+    // console.log('imageLoaded');
+    // this.imagesLoadedCount = this.imagesLoadedCount + 1;
+    // if (this.imagesLoadedCount === this.imagesCount) {
+    //   this.hideLoader = true;
+    // }
   }
+
+  ngAfterViewInit(): void {
+    this.hideLoader = true;
+  }
+
+
 
 
 }

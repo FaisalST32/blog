@@ -1,0 +1,23 @@
+.box-container{
+  margin: 10vh auto;
+  height: calc(80vh - 100px);
+  background-color: #251f1f;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.login-input, .login-button{
+  width: 60%;
+  margin: 15px auto;
+}
+
+.login-button{
+  width: 20%;
+  margin: 15px auto;
+}
+
+
+

@@ -18,6 +18,9 @@ body{
 .transition-slow{
   transition: all 500ms ease-in-out;
 }
+.transition-fast{
+  transition: all 100ms ease-in-out;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -33,4 +36,43 @@ body{
 
 ::-webkit-scrollbar-thumb:hover {
   background: gray;
+}
+
+.text-input{
+  border: 1px solid white;
+  background-color: #1d1d1d;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+}
+.text-input:focus{
+  border-width: 2px;
+  color: white;
+  outline: none;
+}
+.dark-button{
+  border: 1px solid white;
+  background-color: #1d1d1d;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+}
+.dark-button:active{
+  border-width: 2px;
+  outline: none;
+  padding: 4px 5px;
+}
+.dark-button:focus{
+  outline-color: white;
+}
+.dark-button:disabled{
+  color:darkgray;
+}
+.router-link-active{
+  font-weight: bold;
+}
+
+.colored-button{
+  background-color: #EC4E20;
+  color: white;
 }

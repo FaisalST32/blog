@@ -1,0 +1,28 @@
+<div class="container page-content">
+  <div class="row text-input-group">
+    <div class="col-md-3">
+      <label class="input-label">Heading: </label>
+    </div>
+    <div class="col-md-9">
+      <input class="transition-fast text-input w-100" type="text" placeholder="Heading">
+    </div>
+  </div>
+  <div class="row text-input-group">
+    <div class="col-md-3">
+      <label class="input-label" for="">Sub-Heading: </label>
+    </div>
+    <div class="col-md-9">
+      <input class="transition-fast text-input w-100" type="text" placeholder="Sub-Heading">
+    </div>
+  </div>
+  <div class="row text-input-group">
+    <label class="col-md-3 input-label" for="">Header Image:</label>
+    <div class="col-md-9">
+      <div class="file-picker text-input">
+          <input type="file" class="banner-image-picker">
+        <i class="fa fa-plus"></i>&nbsp; Add a banner image
+      </div>
+    </div>
+  </div>
+  <ckeditor [editor]="Editor"></ckeditor>
+</div>

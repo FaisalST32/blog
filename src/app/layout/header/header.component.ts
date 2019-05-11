@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -7,5 +8,17 @@ import { Component } from "@angular/core";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent{
+
+  constructor(private router: Router) {}
+
+  loggedIn(){
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
+  onLogout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/blog']);
+  }
 
 }

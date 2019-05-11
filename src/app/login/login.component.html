@@ -1,0 +1,20 @@
+<div class="container box-container text-center">
+    <h3>
+      Welcome to Faisal's blog.
+    </h3>
+    <p>
+        Login with your Admin Credentials
+    </p>
+    <div>
+        <code [style.visibility]="loginFailed ? 'visible' : 'hidden'">Login Failed</code>
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+        <div>
+            <input type="text" [(ngModel)]="username" required
+            class="text-input login-input" placeholder="username" name="username">
+            <input type="password" [(ngModel)]="password" required
+            class="text-input login-input" placeholder="password" name="password">
+        </div>
+        <input type="submit" [disabled]="!loginForm.valid" class="dark-button colored-button login-button" value="Login">
+    </form>
+</div>

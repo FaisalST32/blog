@@ -13,6 +13,7 @@
   height: 55px;
   text-decoration: none;
   display: inline-block;
+  transition: all 200ms ease-in-out;
 }
 .navbar-fs .nav-link-fs{
   flex-basis: 100px;
@@ -24,9 +25,14 @@
 .navbar-fs .nav-link-fs.write-new{
   margin-left: auto;
   margin-right: 20px;
+  flex-grow: 0.2;
 }
 .navbar-fs .nav-link-fs:hover {
-  background-color: dimgray;
+  background-color: #EC4E20;
+
+}
+
+.navbar-fs .nav-link-fs:hover a {
   transform: scale(1.1, 1.1);
 }
 .home{
@@ -34,4 +40,5 @@
   font-size: 2em;
   text-align: center;
 }
+
 
