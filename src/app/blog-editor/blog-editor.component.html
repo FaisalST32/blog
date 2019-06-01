@@ -1,28 +1,42 @@
 <div class="container page-content">
-  <div class="row text-input-group">
-    <div class="col-md-3">
-      <label class="input-label">Heading: </label>
-    </div>
-    <div class="col-md-9">
-      <input class="transition-fast text-input w-100" type="text" placeholder="Heading">
-    </div>
-  </div>
-  <div class="row text-input-group">
-    <div class="col-md-3">
-      <label class="input-label" for="">Sub-Heading: </label>
-    </div>
-    <div class="col-md-9">
-      <input class="transition-fast text-input w-100" type="text" placeholder="Sub-Heading">
-    </div>
-  </div>
-  <div class="row text-input-group">
-    <label class="col-md-3 input-label" for="">Header Image:</label>
-    <div class="col-md-9">
-      <div class="file-picker text-input">
-          <input type="file" class="banner-image-picker">
-        <i class="fa fa-plus"></i>&nbsp; Add a banner image
+    <div class="row text-input-group">
+      <div class="col-md-3">
+        <label class="input-label">Heading: </label>
+      </div>
+      <div class="col-md-9">
+        <input class="transition-fast text-input w-100" [(ngModel)]="blog.Heading" name="Heading" type="text" placeholder="Heading">
       </div>
     </div>
-  </div>
-  <ckeditor [editor]="Editor"></ckeditor>
+    <div class="row text-input-group">
+      <div class="col-md-3">
+        <label class="input-label" for="">Sub-Heading: </label>
+      </div>
+      <div class="col-md-9">
+        <input class="transition-fast text-input w-100" [(ngModel)]="blog.SubHeading" name="SubHeading" type="text"
+          placeholder="Sub-Heading">
+      </div>
+    </div>
+    <div class="row text-input-group">
+      <label class="col-md-3 input-label" for="">Header Image:</label>
+      <div class="col-md-9">
+        <div class="file-picker text-input">
+          <input type="file" #file (change)="uploadBanner(file.files)" class="banner-image-picker">
+          <i class="fa fa-plus"></i>&nbsp; {{blog.HeaderImagePath ? 'Change the Banner Image' : 'Add a banner image'}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="blog.HeaderImagePath" class="row">
+        <div class="col-md-12">
+          <img [src]="blog.HeaderImagePath">
+        </div>
+      </div>
+    <div class="row">
+
+      <div class="offset-md-3 col-md-9 mb-3">
+        <button class="dark-button colored-button mr-4 px-4" (click)="onSaveBlog()"><i class="fa fa-save"></i> Save</button>
+        <button class="dark-button colored-button mr-4 px-4" (click)="onPublishBlog()"><i class="fa fa-eye"></i> Preview</button>
+        <button class="dark-button colored-button mr-4 px-4" (click)="onPreviewBlog()"><i class="fa fa-upload"></i> Save &amp; Publish</button>
+      </div>
+    </div>
+    <ckeditor [editor]="Editor" [config]="ckconfig" [(ngModel)]="blog.Body"></ckeditor>
 </div>

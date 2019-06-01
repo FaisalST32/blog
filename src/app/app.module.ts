@@ -15,6 +15,9 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './_services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BlogService } from './_services/blog.service.ts';
+import { SharedService } from './_services/shared.service';
+import { FileService } from './_services/file.service';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { HttpClientModule } from '@angular/common/http';
       RouterModule.forRoot(routes)
    ],
    providers: [
-     AuthService
+     AuthService,
+     BlogService,
+     SharedService,
+     FileService
    ],
    bootstrap: [
       AppComponent

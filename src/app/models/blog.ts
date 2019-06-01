@@ -1,6 +1,6 @@
 import { Comment } from './comment';
 
-export interface Blog {
+export class Blog {
   Id: string;
   Heading: string;
   SubHeading: string;
@@ -8,5 +8,4 @@ export interface Blog {
   Body: string;
   HeaderImagePath: string;
   Comments: Comment[];
-  IsPublished: boolean;
 }
