@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlogService } from './_services/blog.service.ts';
 import { SharedService } from './_services/shared.service';
 import { FileService } from './_services/file.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { FileService } from './_services/file.service';
    ],
    imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       CKEditorModule,
       FormsModule,
       HttpClientModule,

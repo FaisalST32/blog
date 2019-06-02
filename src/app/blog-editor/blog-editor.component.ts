@@ -1,15 +1,32 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Blog } from '../models/blog';
 import { BlogService } from '../_services/blog.service.ts';
 import { FileService } from '../_services/file.service';
 import { SharedService } from '../_services/shared.service';
 import { ImageUploaderService } from '../_services/ImageUploader.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-blog-editor',
   templateUrl: './blog-editor.component.html',
-  styleUrls: ['./blog-editor.component.css']
+  styleUrls: ['./blog-editor.component.css'],
+  animations: [trigger('hideable', [
+    state('in', style({
+      opacity: 1
+    })),
+    transition('void => *', [
+      style({
+        opacity: 0,
+      }),
+      animate(300)
+    ]),
+    transition('* => void', [
+      animate(300, style({
+        opacity: 0,
+      }))
+    ])
+  ])]
 })
 export class BlogEditorComponent {
   public Editor = ClassicEditor;
@@ -19,6 +36,8 @@ export class BlogEditorComponent {
   ckconfig = {
     extraPlugins: [ this.TheUploadAdapterPlugin ]
   };
+
+  public blogSaved = false;
 
   TheUploadAdapterPlugin(editor) {
     console.log('TheUploadAdapterPlugin called');
@@ -37,6 +56,7 @@ export class BlogEditorComponent {
   onSaveBlog() {
     this.blogService.saveBlog(this.blog).subscribe(data => {
       console.log(data);
+      this.blogSaved = !this.blogSaved;
     });
   }
 

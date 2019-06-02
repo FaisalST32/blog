@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="blog-header">
-  <img (load)="imageLoaded()" [class.scale-10]="hideLoader" class="blog-header-img transition"
+  <img  [class.scale-10]="hideLoader" class="blog-header-img transition"
     src="../../../assets/images/blog-header.jpg" alt="image">
   <div class="blog-header-overlay transition">
 
@@ -17,28 +17,30 @@
     </span>
   </div>
 </div>
-
 <div class="row no-gutters">
   <div class="col-md-6 col-sm-12 blog-post" *ngFor="let blog of blogPosts">
-    <img (load)="imageLoaded()" [class.scale-10]="hideLoader" class="blog-post-img img-fluid transition"
-      [src]="blog.imgSrc" alt="image">
-    <div class="blog-post-overlay transition">
+    <img [class.scale-10]="hideLoader" class="blog-post-img transition"
+      [src]="blog.HeaderImagePath" alt="image">
+    <!-- <div class="blog-post-overlay transition">
       <div class="overlay-text">
       </div>
-    </div>
-    <div class="blog-details transition">
-      <div class="blog-heading float-up transition">
-        {{blog.heading}}
-      </div>
-      <div class="blog-date transition" [class.float-up]="hideLoader">
-        {{blog.date}}
-      </div>
-      <div class="blog-subheading transition" [class.float-up]="hideLoader">
-        {{blog.subHeading}}
-      </div>
-    </div>
+    </div> -->
+    <div class="blog-text-container transition">
 
+      <div class="blog-heading-container transition">
+        <div class="blog-heading transition">
+          {{ blog.Heading}}
+        </div>
 
+      </div>
+      <div class="blog-details-container">
+        <div class="blog-date">
+          {{blog.DatePublished | date:'fullDate'}}
+        </div>
+        <div class="blog-subheading">
+          {{blog.SubHeading}}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-

@@ -40,3 +40,7 @@
     </div>
     <ckeditor [editor]="Editor" [config]="ckconfig" [(ngModel)]="blog.Body"></ckeditor>
 </div>
+<div *ngIf="blogSaved" [@hideable] style="position: fixed; top: 45vh; left: 50vw; transform: translateX(-50%); text-align: center; background-color: green; color: white;padding: 50px 100px; z-index: 100;">
+  Blog Saved Successfully! <br>
+  <button class="dark-button colored-button" (click)="blogSaved = !blogSaved;">Nice!</button>
+</div>
