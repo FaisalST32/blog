@@ -21,6 +21,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/_redirects",
               "src/web.config",
               "src/googleb659ef3a9668c95c.html"
             ],
@@ -83,6 +84,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/web.config",
+              "src/_redirects",
               "src/googleb659ef3a9668c95c.html"
             ]
           }
