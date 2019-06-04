@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import PreElement from 'ckeditor5-code-block/src/pre';
 import { Blog } from '../models/blog';
 import { BlogService } from '../_services/blog.service.ts';
 import { FileService } from '../_services/file.service';
@@ -34,13 +35,14 @@ export class BlogEditorComponent {
   public blog: Blog;
 
   ckconfig = {
-    extraPlugins: [ this.TheUploadAdapterPlugin ]
+    extraPlugins: [ this.UploadAdapterPlugin ]
   };
+
+
 
   public blogSaved = false;
 
-  TheUploadAdapterPlugin(editor) {
-    console.log('TheUploadAdapterPlugin called');
+  UploadAdapterPlugin(editor) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
       return new ImageUploaderService(loader, '/image');
     };
@@ -54,6 +56,7 @@ export class BlogEditorComponent {
   }
 
   onSaveBlog() {
+    this.blog.Url = this.blog.Heading.split(' ').join('-');
     this.blogService.saveBlog(this.blog).subscribe(data => {
       console.log(data);
       this.blogSaved = !this.blogSaved;

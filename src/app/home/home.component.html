@@ -18,13 +18,9 @@
   </div>
 </div>
 <div class="row no-gutters">
-  <div class="col-md-6 col-sm-12 blog-post" *ngFor="let blog of blogPosts">
+  <div class="col-md-6 col-sm-12 blog-post" *ngFor="let blog of blogPosts" (click)="onOpenPost(blog.Url)">
     <img [class.scale-10]="hideLoader" class="blog-post-img transition"
       [src]="blog.HeaderImagePath" alt="image">
-    <!-- <div class="blog-post-overlay transition">
-      <div class="overlay-text">
-      </div>
-    </div> -->
     <div class="blog-text-container transition">
 
       <div class="blog-heading-container transition">

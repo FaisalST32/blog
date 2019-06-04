@@ -8,7 +8,6 @@ export class ImageUploaderService {
   constructor(loader, url) {
     this.loader = loader;
     this.url = url;
-    console.log('Upload Adapter Constructor', this.loader, this.url);
   }
 
   upload() {

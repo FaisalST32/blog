@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-me.component.css']
 })
 export class AboutMeComponent{
-
+  experience = new Date().getFullYear() - 2017;
 }

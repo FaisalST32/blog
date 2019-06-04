@@ -9,6 +9,8 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent{
 
+  menuExpanded = false;
+
   constructor(private router: Router) {}
 
   loggedIn(){
@@ -19,6 +21,10 @@ export class HeaderComponent{
   onLogout(){
     localStorage.removeItem('token');
     this.router.navigate(['/blog']);
+  }
+
+  toggleMenu(){
+    this.menuExpanded = !this.menuExpanded;
   }
 
 }

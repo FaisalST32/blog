@@ -8,4 +8,6 @@ export class Blog {
   Body: string;
   HeaderImagePath: string;
   Comments: Comment[];
+
+  Url: string;
 }

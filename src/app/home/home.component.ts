@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Blog } from '../models/blog';
 import { BlogService } from '../_services/blog.service.ts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -57,7 +58,8 @@ export class HomeComponent {
   public hideLoader = true;
   public imagesLoadedCount = 0;
 
-  constructor(private blogService: BlogService){
+  constructor(private blogService: BlogService,
+              private router: Router){
     this.blogService.getBlogs().subscribe(blogs => {
       this.blogPosts = blogs;
       this.imagesCount = this.blogPosts.length;
@@ -75,6 +77,11 @@ export class HomeComponent {
   // ngAfterViewInit(): void {
   //   this.hideLoader = true;
   // }
+
+  onOpenPost(blogUrl){
+    console.log(blogUrl);
+    this.router.navigate(['/blogs', blogUrl])
+  }
 
 
 

@@ -19,6 +19,7 @@ import { BlogService } from './_services/blog.service.ts';
 import { SharedService } from './_services/shared.service';
 import { FileService } from './_services/file.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BlogpostComponent } from './blogpost/blogpost.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       HomeComponent,
       AboutMeComponent,
       BlogEditorComponent,
-      LoginComponent
+      LoginComponent,
+      BlogpostComponent
    ],
    imports: [
       BrowserModule,
@@ -42,10 +44,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       RouterModule.forRoot(routes)
    ],
    providers: [
-     AuthService,
-     BlogService,
-     SharedService,
-     FileService
+      AuthService,
+      BlogService,
+      SharedService,
+      FileService
    ],
    bootstrap: [
       AppComponent

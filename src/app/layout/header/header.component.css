@@ -8,7 +8,17 @@
   align-items: center;
   justify-items: center;
 }
-.navbar-fs .nav-link-fs a{
+
+i.fas, i.fa{
+  color: #EC4E20;
+}
+
+.menu-button {
+  float: right;
+  display: none;
+}
+
+.navbar-fs .nav-link-fs a, .home-link{
   color: white;
   height: 55px;
   text-decoration: none;
@@ -41,4 +51,35 @@
   text-align: center;
 }
 
+@media screen and (max-width: 767px){
+  .navbar-fs{
+    flex-flow: column nowrap;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .navbar-fs .nav-link-fs{
+    flex-basis: auto;
+  }
+
+  .navbar-fs .nav-link-fs.write-new {
+    margin-left: 0;
+    margin-right: 0;
+    flex-grow: 0;
+  }
+  .menu-button{
+    display: inline;
+  }
+
+  .navbar-fs.menu-expanded.logged-in {
+    max-height: 330px;
+  }
+  .navbar-fs.menu-expanded.logged-out {
+    max-height: 275px;
+  }
+  .navbar-fs.menu-collapsed {
+    max-height: 55px;
+  }
+
+}
 

@@ -11,6 +11,7 @@ export class BlogService {
               private sharedService: SharedService) { }
 
   saveBlog(blog: Blog) {
+    blog = this.parseCodeBlocks(blog);
     return this.http.post(this.sharedService.baseUrl + 'blog/save', blog);
   }
 
@@ -26,5 +27,19 @@ export class BlogService {
         return blog;
       });
     }));
+  }
+
+  getBlog(blogName: string) {
+    return this.http.get<Blog>(this.sharedService.baseUrl + 'blog/' + blogName).pipe(map(data => {
+      data.HeaderImagePath = this.sharedService.contentUrl + data.HeaderImagePath;
+      return data;
+    })
+    );
+  }
+
+  parseCodeBlocks(blog: Blog): Blog{
+    blog.Body = blog.Body.replace(/--code block start--/g, '<pre><code class="language-typescript">')
+                        .replace(/--code block end--/g, '</code></pre>');
+    return blog;
   }
 }
