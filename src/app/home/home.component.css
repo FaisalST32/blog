@@ -95,8 +95,7 @@
 
 
 .blog-heading-container{
-  height: 20%;
-  margin-bottom: 20%;
+  min-height: 60%;
 }
 
 .blog-details-container{

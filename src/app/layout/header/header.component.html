@@ -4,6 +4,7 @@
   <div  (click)="toggleMenu()" class="nav-link-fs transition"><a href="http://games.faisalrashid.online" target="_blank">Games</a></div>
   <div  (click)="toggleMenu()" class="nav-link-fs transition"><a [routerLink]="['/about-me']" routerLinkActive="router-link-active">About Me</a></div>
   <div  (click)="toggleMenu()" *ngIf="!loggedIn()" class="nav-link-fs transition"><a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a></div>
+  <div  (click)="toggleMenu()" *ngIf="loggedIn()" [routerLink]="['/admin']" routerLinkActive="router-link-active"  class="nav-link-fs transition"><a>Admin</a></div>
   <div  (click)="toggleMenu()" *ngIf="loggedIn()" (click)="onLogout()" class="nav-link-fs transition"><a>Logout</a></div>
   <div  (click)="toggleMenu()" *ngIf="loggedIn()" class="nav-link-fs transition write-new"><a [routerLink]="['/write-new']" routerLinkActive="router-link-active" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Write New</a></div>
 </nav>

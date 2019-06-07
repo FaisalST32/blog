@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { BlogService } from '../_services/blog.service.ts';
-import { Blog } from '../models/blog';
+import { BlogService } from '../_services/blog.service';
+import { Blog } from '../_models/blog';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -28,7 +28,6 @@ export class BlogpostComponent implements OnInit {
         this.blog = response;
       });
     });
-
   }
 
 }

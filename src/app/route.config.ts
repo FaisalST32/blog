@@ -4,6 +4,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { BlogEditorComponent } from './blog-editor/blog-editor.component';
 import { LoginComponent } from './login/login.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
+import { BlogListingComponent } from './admin/blog-listing/blog-listing.component';
 
 export const routes: Route[] = [
   {path: '', component: HomeComponent},
@@ -11,5 +12,6 @@ export const routes: Route[] = [
   {path: 'about-me', component: AboutMeComponent},
   {path: 'write-new', component: BlogEditorComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'blogs/:id', component: BlogpostComponent}
+  {path: 'blogs/:id', component: BlogpostComponent},
+  {path: 'admin', component: BlogListingComponent}
 ];

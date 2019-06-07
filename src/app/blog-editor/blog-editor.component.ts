@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import PreElement from 'ckeditor5-code-block/src/pre';
-import { Blog } from '../models/blog';
-import { BlogService } from '../_services/blog.service.ts';
+import { Blog } from '../_models/blog';
+import { BlogService } from '../_services/blog.service';
 import { FileService } from '../_services/file.service';
 import { SharedService } from '../_services/shared.service';
 import { ImageUploaderService } from '../_services/ImageUploader.service';

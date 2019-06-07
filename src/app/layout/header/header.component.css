@@ -72,7 +72,7 @@ i.fas, i.fa{
   }
 
   .navbar-fs.menu-expanded.logged-in {
-    max-height: 330px;
+    max-height: 385px;
   }
   .navbar-fs.menu-expanded.logged-out {
     max-height: 275px;

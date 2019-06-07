@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,23 +7,23 @@ import { Router } from "@angular/router";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent{
+export class HeaderComponent {
 
   menuExpanded = false;
 
   constructor(private router: Router) {}
 
-  loggedIn(){
+  loggedIn() {
     const token = localStorage.getItem('token');
     return !!token;
   }
 
-  onLogout(){
+  onLogout() {
     localStorage.removeItem('token');
     this.router.navigate(['/blog']);
   }
 
-  toggleMenu(){
+  toggleMenu() {
     this.menuExpanded = !this.menuExpanded;
   }
 

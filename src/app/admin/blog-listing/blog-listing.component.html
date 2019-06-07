@@ -1,0 +1,24 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>S. no.</th>
+      <th>Blog</th>
+      <th>Views</th>
+      <th>Last Viewed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blog of blogStats; let i = index;">
+      <td>{{ i + 1 }}</td>
+      <td>{{ blog.Blog.Heading }}</td>
+      <td>{{ blog.Views }}</td>
+      <td>{{ blog.LastViewed | date:'medium' }}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
