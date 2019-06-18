@@ -108,6 +108,7 @@
   position: absolute;
   top: 50%;
   height: 100%;
+  width: 100%;
 }
 
 .blog-post:hover .blog-text-container{
@@ -154,6 +155,15 @@
   .blog-post .blog-post-img {
     height: 100%;
     width: auto;
+  }
+}
+
+
+
+@media screen and (min-width: 1025px){
+  .blog-post{
+    min-height: 350px;
+
   }
 }
 
