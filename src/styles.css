@@ -100,3 +100,7 @@ body{
   background-color: #EC4E20;
   color: white;
 }
+
+.anchor-link, .anchor-link:hover {
+  color: #ec4e20;
+}

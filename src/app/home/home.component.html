@@ -5,17 +5,35 @@
 
   </div>
 </div>
-<div class="blog-header">
+<div class="blog-header" [routerLink]="['/about-me']" routerLinkActive="router-link-active" >
   <img  [class.scale-10]="hideLoader" class="blog-header-img transition"
     src="../../../assets/images/blog-header.jpg" alt="image">
   <div class="blog-header-overlay transition">
 
   </div>
-  <div class="overlay-text " [class.float-left]="hideLoader">
+  <div class="banner-overlay">
+    <div class="avi-container">
+      <img src="../../assets/images/avi.jpg" alt="">
+    </div>
+    <div class="author-name">
+      <span class="underline-transition">
+        Faisal Rashid
+      </span>
+    </div>
+    <div class="author-info">
+      <span >
+        Software Developer at <a href="https://www.pqube.in" class="anchor-link">PQube Business Solutions</a><br>
+        <span style="margin-top: 10px;"><small>Full-Stack Web Development | App Development</small></span>
+      </span>
+    </div>
+  </div>
+  <!-- <div class="overlay-text " [class.float-left]="hideLoader">
     <span class="underline-transition">
       The Journey Begins!
     </span>
-  </div>
+
+
+  </div> -->
 </div>
 <div class="row no-gutters">
   <div class="col-md-6 col-sm-12 blog-post" *ngFor="let blog of blogPosts" (click)="onOpenPost(blog.Url)">
