@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/_services/blog.service';
-import { Blog } from 'src/app/_models/blog';
 import { AdminBlog } from 'src/app/_models/admin-blog';
 import { Router } from '@angular/router';
 
