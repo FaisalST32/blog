@@ -7,6 +7,7 @@ import { FileService } from '../_services/file.service';
 import { SharedService } from '../_services/shared.service';
 import { ImageUploaderService } from '../_services/ImageUploader.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog-editor',
@@ -40,7 +41,7 @@ export class BlogEditorComponent {
 
 
 
-  public blogSaved = false;
+  public isBlogSaved = false;
 
   UploadAdapterPlugin(editor) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
@@ -50,16 +51,25 @@ export class BlogEditorComponent {
 
   constructor(private blogService: BlogService,
               private fileService: FileService,
-              private sharedService: SharedService) {
+              private sharedService: SharedService,
+              private route: ActivatedRoute) {
     this.blog = new Blog();
     this.blog.Body = ' ';
+
+    this.route.params.subscribe(response => {
+      if(response) {
+        this.blogService.getBlogForEdit(response.url).subscribe(data => {
+          this.blog = data;
+        });
+      }
+    });
   }
 
   onSaveBlog() {
     this.blog.Url = this.blog.Heading.split(' ').join('-');
     this.blogService.saveBlog(this.blog).subscribe(data => {
       console.log(data);
-      this.blogSaved = !this.blogSaved;
+      this.blog.Id = data.Id;
     });
   }
 

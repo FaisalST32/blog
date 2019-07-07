@@ -4,16 +4,18 @@ import { HttpClient } from '@angular/common/http';
 import { SharedService } from './shared.service';
 import { map } from 'rxjs/operators';
 import { AdminBlog } from '../_models/admin-blog';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class BlogService {
 
+
   constructor(private http: HttpClient,
               private sharedService: SharedService) { }
 
-  saveBlog(blog: Blog) {
-    blog = this.parseCodeBlocks(blog);
-    return this.http.post(this.sharedService.baseUrl + 'blog/save', blog);
+  saveBlog(blog: Blog): Observable<Blog> {
+    blog = this.parseCodeBlocks(blog, true);
+    return this.http.post<Blog>(this.sharedService.baseUrl + 'blog/save', blog);
   }
 
   publishBlog(blog: Blog) {
@@ -38,9 +40,15 @@ export class BlogService {
     );
   }
 
-  parseCodeBlocks(blog: Blog): Blog {
-    blog.Body = blog.Body.replace(/--code block start--/g, '<pre><code class="language-typescript">')
-                        .replace(/--code block end--/g, '</code></pre>');
+  parseCodeBlocks(blog: Blog, toHtml): Blog {
+    if (toHtml){
+      blog.Body = blog.Body.replace(/--code block start--/g, '<pre><code class="language-typescript">')
+      .replace(/--code block end--/g, '</code></pre>');
+    } else {
+      blog.Body = blog.Body.replace(/<pre><code class="language-typescript">/g, '--code block start--')
+      .replace(/<\/code><\/pre>/g, '--code block end--');
+    }
+
     return blog;
   }
 
@@ -56,5 +64,12 @@ export class BlogService {
 
   getBlogAnalytics() {
     return this.http.get<AdminBlog[]>(this.sharedService.baseUrl + 'blog/analytics');
+  }
+
+  getBlogForEdit(url: string) {
+    return this.getBlog(url).pipe(map(blog => {
+      blog = this.parseCodeBlocks(blog, false);
+      return blog;
+    }));
   }
 }

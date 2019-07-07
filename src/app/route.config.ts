@@ -11,6 +11,7 @@ export const routes: Route[] = [
   {path: 'blog', component: HomeComponent},
   {path: 'about-me', component: AboutMeComponent},
   {path: 'write-new', component: BlogEditorComponent},
+  {path: 'update/:url', component: BlogEditorComponent},
   {path: 'login', component: LoginComponent},
   {path: 'blogs/:id', component: BlogpostComponent},
   {path: 'admin', component: BlogListingComponent}

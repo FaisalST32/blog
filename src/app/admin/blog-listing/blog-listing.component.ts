@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/_services/blog.service';
 import { Blog } from 'src/app/_models/blog';
 import { AdminBlog } from 'src/app/_models/admin-blog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-listing',
@@ -12,7 +13,13 @@ export class BlogListingComponent implements OnInit {
 
   blogStats: AdminBlog[];
 
-  constructor(private blogService: BlogService) { }
+  constructor(private blogService: BlogService,
+              private router: Router) { }
+
+
+  onEditBlog(blogUrl: string) {
+    this.router.navigate(['/update', blogUrl]);
+  }
 
   ngOnInit() {
     this.blogService.getBlogAnalytics().subscribe(response => {
@@ -21,5 +28,7 @@ export class BlogListingComponent implements OnInit {
     error => console.log(error)
     );
   }
+
+
 
 }

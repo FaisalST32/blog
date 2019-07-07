@@ -16,7 +16,7 @@
       <td>{{ blog.Blog.Heading }}</td>
       <td>{{ blog.Views }}</td>
       <td>{{ blog.LastViewed | date:'medium' }}</td>
-      <td></td>
+      <td (click)="onEditBlog(blog.Blog.Url);"><i class="fa fa-pencil"></i></td>
       <td></td>
       <td></td>
     </tr>

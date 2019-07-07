@@ -18,6 +18,9 @@
 }
 
 .about-well{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   width: 100%;
   margin: 20px 0;
 }
@@ -33,9 +36,10 @@
 }
 .about-text-div{
   display: inline-block;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   vertical-align: top;
-  width: calc(100% - 450px);
+  max-width: 450px;
+  /* width: calc(100% - 450px); */
 }
 @media screen and (max-width: 1200px){
   .about-text-div{
@@ -59,11 +63,6 @@
 .about-text-div ul li{
   margin: 16px 0;
 }
-
-/* .about-text-div .username{
-  visibility: hidden;
-  opacity: 0;
-} */
 .about-text-div .social-links:hover .username{
   color: #ec4e20;
 }
