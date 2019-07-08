@@ -7,7 +7,10 @@ import { FileService } from '../_services/file.service';
 import { SharedService } from '../_services/shared.service';
 import { ImageUploaderService } from '../_services/ImageUploader.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+// TODO: Create Service
+declare var toastfs: any;
 
 @Component({
   selector: 'app-blog-editor',
@@ -48,7 +51,8 @@ export class BlogEditorComponent {
   constructor(private blogService: BlogService,
               private fileService: FileService,
               private sharedService: SharedService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
     this.blog = new Blog();
     this.blog.Body = ' ';
 
@@ -64,8 +68,8 @@ export class BlogEditorComponent {
   onSaveBlog() {
     this.blog.Url = this.blog.Heading.split(' ').join('-');
     this.blogService.saveBlog(this.blog).subscribe(data => {
-      console.log(data);
       this.blog.Id = data.Id;
+      toastfs.success('Blog saved successfully');
     });
   }
 
@@ -74,7 +78,8 @@ export class BlogEditorComponent {
   }
 
   onPreviewBlog() {
-
+    // this.router.navigate(['blogs', this.blog.Url]);
+    window.open('blogs/' + this.blog.Url);
   }
 
   uploadBanner(files: any) {

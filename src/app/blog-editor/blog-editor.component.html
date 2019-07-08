@@ -34,8 +34,8 @@
 
       <div class="offset-md-3 col-md-9 mb-3">
         <button class="dark-button colored-button mr-4 px-4" (click)="onSaveBlog()"><i class="fa fa-save"></i> Save</button>
-        <button class="dark-button colored-button mr-4 px-4" (click)="onPublishBlog()"><i class="fa fa-eye"></i> Preview</button>
-        <button class="dark-button colored-button mr-4 px-4" (click)="onPreviewBlog()"><i class="fa fa-upload"></i> Save &amp; Publish</button>
+        <button class="dark-button colored-button mr-4 px-4" (click)="onPreviewBlog()"><i class="fa fa-eye"></i> Preview</button>
+        <button class="dark-button colored-button mr-4 px-4" (click)="onPublishBlog()"><i class="fa fa-upload"></i> Save &amp; Publish</button>
       </div>
     </div>
     <ckeditor [editor]="Editor" [config]="ckconfig" [(ngModel)]="blog.Body"></ckeditor>
