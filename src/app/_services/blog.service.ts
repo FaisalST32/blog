@@ -14,8 +14,9 @@ export class BlogService {
               private sharedService: SharedService) { }
 
   saveBlog(blog: Blog): Observable<Blog> {
-    blog = this.parseCodeBlocks(blog, true);
-    return this.http.post<Blog>(this.sharedService.baseUrl + 'blog/save', blog);
+    let blogToPost = Object.assign({}, blog);
+    blogToPost = this.parseCodeBlocks(blogToPost, true);
+    return this.http.post<Blog>(this.sharedService.baseUrl + 'blog/save', blogToPost);
   }
 
   publishBlog(blog: Blog) {
@@ -41,7 +42,7 @@ export class BlogService {
   }
 
   parseCodeBlocks(blog: Blog, toHtml): Blog {
-    if (toHtml){
+    if (toHtml) {
       blog.Body = blog.Body.replace(/--code block start--/g, '<pre><code class="language-typescript">')
       .replace(/--code block end--/g, '</code></pre>');
     } else {
