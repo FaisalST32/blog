@@ -1,10 +1,27 @@
-<nav class="navbar-fs transition" [ngClass]="{'menu-expanded': menuExpanded, 'menu-collapsed': !menuExpanded, 'logged-in': loggedIn(), 'logged-out': !loggedIn()}">
-  <div class="home"><a class="home-link" [routerLink]="['/']">Faisal Rashid</a><span (click)="toggleMenu()" class="menu-button"><i class="fa fa-bars"></i></span></div>
-  <div  (click)="toggleMenu()" class="nav-link-fs transition"><a [routerLink]="['/blog']" routerLinkActive="router-link-active">Blogs</a></div>
-  <div  (click)="toggleMenu()" class="nav-link-fs transition"><a href="http://games.faisalrashid.online" target="_blank">Games</a></div>
-  <div  (click)="toggleMenu()" class="nav-link-fs transition"><a [routerLink]="['/about-me']" routerLinkActive="router-link-active">About Me</a></div>
-  <div  (click)="toggleMenu()" *ngIf="!loggedIn()" class="nav-link-fs transition"><a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a></div>
-  <div  (click)="toggleMenu()" *ngIf="loggedIn()" [routerLink]="['/admin']" routerLinkActive="router-link-active"  class="nav-link-fs transition"><a>Admin</a></div>
-  <div  (click)="toggleMenu()" *ngIf="loggedIn()" (click)="onLogout()" class="nav-link-fs transition"><a>Logout</a></div>
-  <div  (click)="toggleMenu()" *ngIf="loggedIn()" class="nav-link-fs transition write-new"><a [routerLink]="['/write-new']" routerLinkActive="router-link-active" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Write New</a></div>
+<nav class="navbar-fs transition-slow" [ngClass]="{'menu-expanded': menuExpanded, 'menu-collapsed': !menuExpanded, 'logged-in': loggedIn(), 'logged-out': !loggedIn()}">
+  <div class="home">
+    <a class="home-link" [routerLink]="['/']">Faisal Rashid</a>
+    <span (click)="toggleMenu()" class="menu-button"><i class="fa fa-bars"></i></span>
+  </div>
+  <div  (click)="toggleMenu()" class="nav-link-fs transition-slow">
+    <a [routerLink]="['/blog']" routerLinkActive="router-link-active">Blogs</a>
+  </div>
+  <div  (click)="toggleMenu()" class="nav-link-fs transition-slow">
+    <a href="http://games.faisalrashid.online" target="_blank">Games</a>
+  </div>
+  <div  (click)="toggleMenu()" class="nav-link-fs transition-slow">
+    <a [routerLink]="['/about-me']" routerLinkActive="router-link-active">About Me</a>
+  </div>
+  <div  (click)="toggleMenu()" *ngIf="!loggedIn()" class="nav-link-fs transition-slow">
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+  </div>
+  <div  (click)="toggleMenu()" *ngIf="loggedIn()" [routerLink]="['/admin']" routerLinkActive="router-link-active"  class="nav-link-fs transition-slow">
+    <a>Admin</a>
+  </div>
+  <div  (click)="toggleMenu()" *ngIf="loggedIn()" (click)="onLogout()" class="nav-link-fs transition-slow">
+    <a>Logout</a>
+  </div>
+  <div  (click)="toggleMenu()" *ngIf="loggedIn()" class="nav-link-fs transition-slow write-new">
+    <a [routerLink]="['/write-new']" routerLinkActive="router-link-active" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Write New</a>
+  </div>
 </nav>

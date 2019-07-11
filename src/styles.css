@@ -1,14 +1,4 @@
-@font-face{
-  font-family: Lato;
-  src: url(assets/fonts/Lato-Light.ttf);
-}
 
-/* @font-face{
-  font-family: Raleway;
-  src: url(assets/fonts/Raleway/Raleway-Regular.ttf);
-  font-weight: normal;
-  font-style: normal;
-} */
 @font-face{
   font-family: Montserrat;
   src: url(assets/fonts/Montserrat/Montserrat-Regular.ttf);
@@ -29,7 +19,7 @@
 }
 
 body{
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #353232;

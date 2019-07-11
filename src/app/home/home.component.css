@@ -1,3 +1,15 @@
+@keyframes bobble{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
 .blog-header{
   position: relative;
   width: 100%;
@@ -64,7 +76,8 @@
 }
 
 .blog-post:hover>.blog-post-img{
-  transform: scale(1.1,1.1);
+  /* transform: scale(1.1,1.1); */
+  filter: blur(30px);
 }
 
 .blog-post-img{
@@ -106,13 +119,17 @@
   padding: 15px;
   background: rgba(0,0,0,0.7);
   position: absolute;
-  top: 50%;
-  height: 100%;
-  width: 100%;
+  top: 55%;
+  height: 80%;
+  width: 80%;
+  left: 10%;
+  animation-name: bobble;
+  animation-duration:  1s;
+  animation-iteration-count: 3;
 }
 
 .blog-post:hover .blog-text-container{
-  top: 0;
+  top: 10%;
 }
 
 
@@ -122,6 +139,7 @@
 
 .blog-date{
   font-size: 1rem;
+  color: #ec4e20;
 }
 .blog-subheading{
   font-size: 1.5rem;
@@ -235,8 +253,11 @@ span.underline-transition{
     transform: none;
   }
   .blog-text-container{
-
     top: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    animation: none;
   }
   .blog-post .blog-heading {
     font-size: 1.5rem;

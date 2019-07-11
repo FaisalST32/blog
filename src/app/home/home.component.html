@@ -1,14 +1,14 @@
 <div class="pre-loader" *ngIf="!hideLoader">
   <div class="loader-text">K.I.S.S - Keep It Simple Stupid!</div>
 
-  <div class="loader-progress transition" [ngStyle]="{'width': 100/imagesCount*imagesLoadedCount.toString() + '%'}">
+  <div class="loader-progress transition-slow" [ngStyle]="{'width': 100/imagesCount*imagesLoadedCount.toString() + '%'}">
 
   </div>
 </div>
 <div class="blog-header" [routerLink]="['/about-me']" routerLinkActive="router-link-active" >
-  <img  [class.scale-10]="hideLoader" class="blog-header-img transition"
+  <img  [class.scale-10]="hideLoader" class="blog-header-img transition-slow"
     src="../../../assets/images/blog-header.jpg" alt="image">
-  <div class="blog-header-overlay transition">
+  <div class="blog-header-overlay transition-slow">
 
   </div>
   <div class="banner-overlay">
@@ -37,12 +37,12 @@
 </div>
 <div class="row no-gutters">
   <div class="col-md-6 col-sm-12 blog-post" *ngFor="let blog of blogPosts" (click)="onOpenPost(blog.Url)">
-    <img [class.scale-10]="hideLoader" class="blog-post-img transition"
+    <img [class.scale-10]="hideLoader" class="blog-post-img transition-slow"
       [src]="blog.HeaderImagePath" alt="image">
-    <div class="blog-text-container transition">
+    <div class="blog-text-container transition-slow">
 
-      <div class="blog-heading-container transition">
-        <div class="blog-heading transition">
+      <div class="blog-heading-container transition-slow">
+        <div class="blog-heading transition-slow">
           {{ blog.Heading}}
         </div>
 
