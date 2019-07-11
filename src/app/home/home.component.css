@@ -10,6 +10,8 @@
   }
 }
 
+
+
 .blog-header{
   position: relative;
   width: 100%;
@@ -161,32 +163,7 @@
 
 }
 
-.pre-loader{
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,1);
-  left: 0;
-  top: 0;
-  z-index: 9;
-}
-.loader-progress{
-  position: fixed;
-  height: 2px;
-  top: 50%;
-  background-color: #fff;
 
-}
-
-.loader-text{
-  display: inline-block;
-  position: fixed;
-  top: 47.5vh;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-style: italic;
-}
 
 span.underline-transition{
   background-image: linear-gradient(transparent 97%, white 3%);

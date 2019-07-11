@@ -1,10 +1,4 @@
-<div class="pre-loader" *ngIf="!hideLoader">
-  <div class="loader-text">K.I.S.S - Keep It Simple Stupid!</div>
 
-  <div class="loader-progress transition-slow" [ngStyle]="{'width': 100/imagesCount*imagesLoadedCount.toString() + '%'}">
-
-  </div>
-</div>
 <div class="blog-header" [routerLink]="['/about-me']" routerLinkActive="router-link-active" >
   <img  [class.scale-10]="hideLoader" class="blog-header-img transition-slow"
     src="../../../assets/images/blog-header.jpg" alt="image">

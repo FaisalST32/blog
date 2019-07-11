@@ -21,6 +21,7 @@ import { FileService } from './_services/file.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogpostComponent } from './blogpost/blogpost.component';
 import { BlogListingComponent } from './admin/blog-listing/blog-listing.component';
+import { UiService } from './_services/ui.service';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { BlogListingComponent } from './admin/blog-listing/blog-listing.componen
       AuthService,
       BlogService,
       SharedService,
-      FileService
+      FileService,
+      UiService
    ],
    bootstrap: [
       AppComponent

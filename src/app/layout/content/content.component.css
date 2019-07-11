@@ -1,0 +1,52 @@
+@keyframes loading{
+  0%{
+    width: 0vw;
+  }
+  10%{
+    width: 5vw;
+  }
+  35%{
+    width: 56vw;
+  }
+  46%{
+    width: 70vw;
+  }
+  60%{
+    width: 70vw;
+  }
+  86%{
+    width: 83vw;
+  }
+  100%{
+    width: 94vw;
+  }
+
+}
+
+.pre-loader{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,1);
+  left: 0;
+  top: 0;
+  z-index: 9;
+}
+.loader-progress{
+  height: 2px;
+  background-color: #fff;
+  animation: loading 8s ease-in-out 0s 1;
+  width: 94vw;
+  margin-top: 5px;
+}
+
+.loader-content{
+  display: inline-block;
+  position: fixed;
+  top: 50vh;
+  width: 100vw;
+  transform: translateY(-50%);
+  color: white;
+  /* font-style: italic; */
+  text-align: center;
+}
