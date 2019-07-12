@@ -58,7 +58,7 @@ i.fas, i.fa{
 
 
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
   .navbar-fs{
     flex-flow: column nowrap;
     height: auto;
@@ -67,6 +67,8 @@ i.fas, i.fa{
 
   .navbar-fs .nav-link-fs{
     flex-basis: auto;
+    width: 100%;
+
   }
 
   .navbar-fs .nav-link-fs.write-new {

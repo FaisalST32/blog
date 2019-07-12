@@ -30,10 +30,10 @@
   </div> -->
 </div>
 <div class="row no-gutters">
-  <div class="col-md-6 col-sm-12 blog-post" *ngFor="let blog of blogPosts" (click)="onOpenPost(blog.Url)">
+  <div class="col-md-6 col-sm-12 blog-post" *ngFor="let blog of blogPosts; let i = index;" (click)="onOpenPost(blog.Url)">
     <img [class.scale-10]="hideLoader" class="blog-post-img transition-slow"
       [src]="blog.HeaderImagePath" alt="image">
-    <div class="blog-text-container transition-slow">
+    <div class="blog-text-container transition-slow" [class.bobble-animation]="i == 0">
 
       <div class="blog-heading-container transition-slow">
         <div class="blog-heading transition-slow">
