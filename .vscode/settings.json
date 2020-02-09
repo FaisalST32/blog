@@ -1,4 +1,5 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/f7410545-3e92-45a1-97c7-84cc0b44bc24/resourceGroups/faisalsblog/providers/Microsoft.Web/sites/faisalsblog",
-    "appService.deploySubpath": "dist\\blog"
+    "appService.deploySubpath": "dist\\blog",
+    "workbench.colorCustomizations": {}
 }

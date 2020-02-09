@@ -16,22 +16,25 @@ declare var toastfs: any;
   selector: 'app-blog-editor',
   templateUrl: './blog-editor.component.html',
   styleUrls: ['./blog-editor.component.css'],
-  animations: [trigger('hideable', [
-    state('in', style({
-      opacity: 1
-    })),
-    transition('void => *', [
-      style({
-        opacity: 0,
-      }),
-      animate(300)
-    ]),
-    transition('* => void', [
-      animate(300, style({
-        opacity: 0,
-      }))
-    ])
-  ])]
+  // animations: [trigger('hideable', [
+  //   state('in', style({
+  //     opacity: 1,
+  //     transform: 'translateY(0px)'
+  //   })),
+  //   transition('void => *', [
+  //     style({
+  //       opacity: 0,
+  //       transform: 'translateY(10px)'
+  //     }),
+  //     animate(300)
+  //   ]),
+  //   transition('* => void', [
+  //     animate(300, style({
+  //       opacity: 0,
+  //       translateY: '10px'
+  //     }))
+  //   ])
+  // ])]
 })
 export class BlogEditorComponent {
   public Editor = ClassicEditor;
