@@ -1,6 +1,6 @@
+import { HttpService } from './http.service';
 import { Injectable } from '@angular/core';
 import { Blog } from '../_models/blog';
-import { HttpClient } from '@angular/common/http';
 import { SharedService } from './shared.service';
 import { map } from 'rxjs/operators';
 import { AdminBlog } from '../_models/admin-blog';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class BlogService {
 
 
-  constructor(private http: HttpClient,
+  constructor(private http: HttpService,
               private sharedService: SharedService) { }
 
   saveBlog(blog: Blog): Observable<Blog> {

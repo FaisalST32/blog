@@ -32,6 +32,7 @@ export class ImageUploaderService {
 
     xhr.open('POST', environment.serverUrl + 'blog/uploadfile', true);
     xhr.responseType = 'json';
+    xhr.setRequestHeader('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
   }
 
   _initListeners(resolve, reject, file) {

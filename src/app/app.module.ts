@@ -14,7 +14,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './_services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BlogService } from './_services/blog.service';
 import { SharedService } from './_services/shared.service';
 import { FileService } from './_services/file.service';
@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogpostComponent } from './blogpost/blogpost.component';
 import { BlogListingComponent } from './admin/blog-listing/blog-listing.component';
 import { UiService } from './_services/ui.service';
+import { AuthInterceptor } from './_services/auth.interceptor';
 
 
 @NgModule({
@@ -51,7 +52,12 @@ import { UiService } from './_services/ui.service';
       BlogService,
       SharedService,
       FileService,
-      UiService
+      UiService,
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+      }
    ],
    bootstrap: [
       AppComponent

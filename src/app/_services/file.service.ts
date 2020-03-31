@@ -1,17 +1,17 @@
-import { Injectable } from "@angular/core";
-import { SharedService } from "./shared.service";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { HttpService } from './http.service';
+import { Injectable } from '@angular/core';
+import { SharedService } from './shared.service';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class FileService {
 
 
-  constructor(private http: HttpClient,
+  constructor(private http: HttpService,
     private sharedService: SharedService) { }
 
   public uploadFile(file): Observable<any> {
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append(file.name, file);
     return this.http.post<any>(this.sharedService.baseUrl + 'blog/uploadfile', formData);
   }

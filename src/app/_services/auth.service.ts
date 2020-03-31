@@ -1,5 +1,5 @@
+import { HttpService } from './http.service';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 @Injectable({
@@ -7,12 +7,10 @@ import { environment } from '../../environments/environment';
 })
 export class AuthService {
   private baseUrl = environment.serverUrl + 'auth/';
-  private token: string;
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpService) { }
 
   login(model: any) {
-    return this.http.post(this.baseUrl + 'login', model).pipe(map(data => {
+    return this.http.post(this.baseUrl + 'login', model, false).pipe(map(data => {
       const user: any = data;
       if (user) {
         localStorage.setItem('token', user.token);
