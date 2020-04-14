@@ -77,7 +77,12 @@ export class BlogEditorComponent {
   }
 
   onPublishBlog() {
-
+    this.blogService.publishBlog(this.blog.Id).subscribe(data => {
+      console.log(data);
+      toastfs.success('Blog published successfully');
+    }, err => {
+      toastfs.error('Failed to publish blog');
+    });
   }
 
   onPreviewBlog() {

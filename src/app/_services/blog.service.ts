@@ -19,8 +19,8 @@ export class BlogService {
     return this.http.post<Blog>(this.sharedService.baseUrl + 'blog/save', blogToPost);
   }
 
-  publishBlog(blog: Blog) {
-    return this.http.post(this.sharedService.baseUrl + 'blog/publish', blog);
+  publishBlog(blogId: string) {
+    return this.http.post(`${this.sharedService.baseUrl}blog/${blogId}/publish`, null);
   }
 
   getBlogs() {

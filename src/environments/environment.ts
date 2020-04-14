@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'http://192.168.0.100:91/api/',
-  contentUrl: 'http://192.168.0.100:91/uploads/'
+  serverUrl: 'http://192.168.0.108:91/api/',
+  contentUrl: 'http://192.168.0.108:91/uploads/'
   // serverUrl: 'http://localhost:5000/api/',
   // contentUrl: 'http://localhost:5000/uploads/'
 };
